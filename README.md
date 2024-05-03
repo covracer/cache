@@ -205,8 +205,7 @@ Additionally, you can use arbitrary command output in a cache key, such as a dat
   # http://man7.org/linux/man-pages/man1/date.1.html
   - name: Get Date
     id: get-date
-    run: |
-      echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
+    run: /bin/date -u +date=%Y%m%d >> $GITHUB_OUTPUT
     shell: bash
 
   - uses: actions/cache@v4
